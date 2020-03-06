@@ -180,7 +180,7 @@ function better_output()
    this.list_vert();
 }
 
-// --------------------
+// ---------------------
 function add_edge(u_i,v_i)   // obsolete, replaced by add_edge2() below
 {
 
