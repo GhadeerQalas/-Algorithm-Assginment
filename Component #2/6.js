@@ -314,22 +314,33 @@ function topoSearch(type) // topological search method
 function makeAdjMatrix()
 {
    // initially create row elements and zero the adjacency matrix
-   var matrix = [];
+   for(var i=0; i<this.nv; i++)
+   {
+      this.adjMatrix[i]=[];
+      for(var j=0; j<this.nv;j++)
+      {
+         this.adjMatrix[i][j]=0;
+      }
 
-   for(var i=0; i<this.nv; i++){
-      matrix[i]=[];
-      for(var j=0; j<this.nv;j++){
-         matrix[i][j]=0;
+      // for each vertex, set 1 for each adjacent
+      if(this.weighted)
+      {
+         var adj = this.vert[i].adjacent.traverse();
+         for(var j=0; j<adj.length ; j++)
+         {
+            var edge = adj[j];
+            this.adjMatrix[i][edge.target_v]=edge.weight;
+         }
+      }
+
+      // for each vertex, set the weight for each edge
+      else
+      {
+         var w = this.vert[i].adjacentById();
+         for(var j=0; j<w.length ; j++)
+         {
+            this.adjMatrix[i][w[j]]=1;
+         }
       }
    }
-
-   // for each vertex, set 1 for each adjacency
-   for(var i=0; i<this.nv; i++){
-      w = this.vert[i].adjacentById();
-      for(var j=0; j<w.length ; j++){
-         matrix[i][w[j]]=1;
-      }
-   }
-
-   return matrix;
 }
