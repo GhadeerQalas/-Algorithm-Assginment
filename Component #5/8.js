@@ -225,6 +225,13 @@ function warshallFloydImpl()
 }
 
 
+/**
+ * Represents a function
+ * @function dfsTCImpl
+ * @author Ghadeer Qalas
+ * @return traverse the vertices to check which is visited:
+ * if visited set 1 in the corresponding TC matrix
+ */
 function dfsTCImpl()
 {
     // for each vertex
