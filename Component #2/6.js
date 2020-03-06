@@ -17,15 +17,9 @@ function _main()
    // create a graph (default undirected)
 
    var g = new Graph();
-
-
    // set input graph properties (label, directed etc.)
-
    g.label = "Figure 3.10 (Levitin, 3rd edition)}";
-
-
    // use global input arrays _v and _e to initialize its internal data structures
-
    g.read_graph(_v,_e);
 
    // use print_graph() method to check graph
@@ -90,8 +84,6 @@ function Edge(target_v, weight){
    this.target_v = target_v;
 
 }
-
-
 // -----------------------------------------------------------------------
 // Graph object constructor
 
@@ -121,7 +113,7 @@ function Graph()
    this.list_vert = list_vert;
 
    this.add_edge = add_edge;        // replace (don't change old .add_edge)
-   this.add_edge2 = add_edge2;
+   this.add_edge2 = add_edge2;      // add edge 2
    this.dfs = dfs;                  // DFS a connected component
    this.bfs = bfs;                  // BFS a connected component
 
@@ -129,8 +121,6 @@ function Graph()
    // student methods next; implementing functions in student code section at end
 
    this.topoSearch = topoSearch;    // perform a topological search
-
-
 }
 
 
@@ -289,9 +279,6 @@ function add_edge2(u_i,v_i)
    var v_edge = new Edge(v_i);
 
    u.adjacent.insert(v_edge);
-
-
-
    // insert (v,u) if undirected graph (repeat above but reverse vertex order)
 
    if(!this.digraph){
@@ -300,12 +287,10 @@ function add_edge2(u_i,v_i)
 
       v.adjacent.insert(u_edge);
    }
-
-
 }
 
 // --------------------
-function topoSearch(type)
+function topoSearch(type) // topological search method
 {
    // mark all vertices unvisited
    for (var i = 0; i < this.nv; i++)
@@ -323,7 +308,6 @@ function topoSearch(type)
          this.nc++;
       }
    }
-
 }
 
 // --------------------
