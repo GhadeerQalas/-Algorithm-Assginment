@@ -1,4 +1,4 @@
-// CPCS 324 Algorithms & Data Structures 2
+ // CPCS 324 Algorithms & Data Structures 2
 // Graph data structure starter - Transitive Closure Package
 // 2019, Dr. Muhammad Al-Hashimi
 
@@ -13,10 +13,10 @@ var _v = [], _e = [];   // note naming conventions in upload guide
 
 // -----------------------------------------------------------------------
 /**
- * Represents a book.
- * @constructor
- * @param {string} title - The title of the book.
- * @param {string} author - The author of the book.
+ * Represents a function
+ * @function main
+ * @author Ghadeer Qalas
+ * @comment in this function I will create a graph  and check of connectivity  of dfs and bfs
  */
 function _main()
 {
@@ -51,7 +51,6 @@ function _main()
 	}
 
    // perform breadth-first search and output stored result
-
 	g.topoSearch(g.connectedComp, "bfs");
 	document.write("<p>bfs_order: ", g.bfs_out, "</p>");
 
@@ -60,18 +59,15 @@ function _main()
 	for (var i = 0; i < g.dfsTC.length; i++)
 	{
 		document.write(g.dfsTC[i], "</br>");
-
 	}
-
-}
+} // end function
 
 
 // -----------------------------------------------------------------------
 /**
- * Represents a book.
- * @constructor
- * @param {string} title - The title of the book.
- * @param {string} author - The author of the book.
+ * Represents a function
+ * @function vertex
+ * @author Ghadeer Qalas
  */
 function Vertex(v)
 {
@@ -80,7 +76,6 @@ function Vertex(v)
 	// no JSDOC comments in this section
 
 	// base property fields from P1M1
-
 	this.label = v.label;  // ... complete from P1M1 (remove comment)
 	this.visit = false;
 	this.adjacent = new List();
@@ -90,8 +85,6 @@ function Vertex(v)
 	this.list_vert_ = list_vert;
 	// --------------------
 	// more student fields next
-
-
 	// --------------------
 	// more student methods next
 
@@ -99,12 +92,9 @@ function Vertex(v)
 
 // -----------------------------------------------------------------------
 /**
- * Retrieves a user by email.
- * @async
- * @method
- * @param {String} email - User email
- * @returns {User} User object
- * @throws {NotFoundError} When the user is not found.
+ * @function edge
+ * @author Ghadeer Qalas
+ * @returns vertex and wieght
  */
 function Edge(vert_i,weight)
 {
@@ -112,9 +102,7 @@ function Edge(vert_i,weight)
 	// for this section, strip line comments
 	// no JSDOC comments in this section
 
-
 	// base property fields
-
 	this.target_v = vert_i;  // ... complete from P1M1 (remove comment)
 	if (weight == undefined)
 	{
@@ -124,28 +112,20 @@ function Edge(vert_i,weight)
 		this.weight = weight;
 	}
 
-	// base member methods
-
-
-	// --------------------
-	// more student fields next
-
-
-	// --------------------
-	// more student methods next
-
 }
 
 
 // -----------------------------------------------------------------------
-
+/**
+ * Represents a function
+ * @function graph
+ * @author Ghadeer Qalas
+ */
 function Graph()
 {
 	// published docs section (ref. assignment page)
 	// for this section, strip line comments
 	// no JSDOC comments in this section
-
-
 	// base property fields
 
 	this.vert = [];
@@ -210,6 +190,13 @@ function hasPathImpl()
 
 
 // --------------------
+/**
+ * Represents a function
+ * @function input
+ * @author Ghadeer Qalas
+ * @elements vertex and edge
+ * @comment check if this function weighted or not and digraph length
+ */
 function better_input(v, e) // default graph input method
 {
 	this.nv=v.length;
@@ -249,6 +236,15 @@ function addEdgeImpl(u_i,v_i, weight)
 }
 
 // --------------------
+
+/**
+ * Represents a function
+ * @function toplogical search
+ * @author Ghadeer Qalas
+ * @return counter
+ * @elements counter and type of Algorithms
+ *
+ */
 function topoSearch_(counter, type)
 {
 	var i;
@@ -275,6 +271,14 @@ function topoSearch_(counter, type)
 }
 
 // --------------------
+/**
+ * Represents a function
+ * @function  dfs
+ * @author Ghadeer Qalas
+ * @return counter
+ * @elements vertex
+ *
+ */
 function dfs(v_i)
 {
 	v=this.vert[v_i];
@@ -293,6 +297,13 @@ function dfs(v_i)
 }
 
 // --------------------
+/**
+ * Represents a function
+ * @function  bfs
+ * @author Ghadeer Qalas
+ * @elements vertex
+ *
+ */
 function bfs(v_i)
 {
 	var v = this.vert[v_i];
@@ -376,6 +387,13 @@ function DfsTCMat()
 
 }
 //----------------------------
+/**
+ * Represents a function
+ * @function  printComponent
+ * @author Ghadeer Qalas
+ * @return connectivity or not
+ *
+ */
 function printComponent()
 {
 
