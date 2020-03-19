@@ -108,25 +108,22 @@ function Graph()
     this.adjMatrix = [];						// graph adjacency matrix to be created on demand
 
 	// base member methods
-    this.listVerts = listVertsImpl;				// List graph vertices using info strings returned by Vertex methods
+    this.listVerts = listVertsImpl;
     this.readGraph = better_input;				// default input reader method
     this.addEdge = addEdgeImpl3;				// Insert an edge
     this.printGraph = printGraphImpl;			// better printer function
     this.makeGraph = makeGraphImpl;				// Create a graph
     this.dfs = dfsImpl;							// DFS a connected component
     this.bfs = bfsImpl;							// BFS a connected component
-    this.makeAdjMatrix = makeAdjMatrixImpl3;	// Create adjacency (or weight, if graph weighted) matrix
-    this.isConnected = isConnectedImpl;			// Test if graph is connected returning true, otherwise false
-    this.componentInfo = componentInfoImpl;		// Get printable connectivity info strings
-    this.topoSearch = topoSearchImpl;			// perform a topological search
+    this.makeAdjMatrix = makeAdjMatrixImpl3;
+    this.isConnected = isConnectedImpl;
+    this.componentInfo = componentInfoImpl;
+    this.topoSearch = topoSearchImpl;
 
-	// transitive closure package
-	/**Distance matrix of shortest paths, set after applying warshallFloyd.
-		Stores output of warshallFloyd call.*/
+
 	this.floydD = [];
 
-	/** closure matrix , set after applying warshallFloyd.
-		Stores output of last warshallFloyd call.*/
+
 	this.warshallTC = [];
 
 	/**Transitive closure matrix , set after applying DfsTC.
